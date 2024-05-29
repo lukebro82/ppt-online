@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding-top: 100px;
+}
+
+.div-redondo {
+  border: 15px solid black;
+  border-radius: 130px;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.h2-redondo {
+  font-size: 100px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.hands-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  position: absolute;
+  bottom: -14px;
+}
+
+@media (max-width: 450px) {
+  .hands-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: absolute;
+    bottom: 0px;
+  }
+}

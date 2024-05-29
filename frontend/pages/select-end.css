@@ -1,0 +1,18 @@
+.select-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.select-end-computer {
+  position: absolute;
+  top: 0px;
+  transform: rotate(180deg);
+}
+
+.select-end-user {
+  position: absolute;
+  bottom: 0px;
+}
