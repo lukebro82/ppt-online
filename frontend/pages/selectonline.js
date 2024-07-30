@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Select = void 0;
+exports.Selectonline = void 0;
 const state_1 = require("../state");
 const router_1 = require("@vaadin/router");
-class Select extends HTMLElement {
+class Selectonline extends HTMLElement {
     connectedCallback() {
         this.render();
     }
@@ -34,28 +34,29 @@ class Select extends HTMLElement {
                 typesPiedra = "hand-grande";
                 typesPapel = "hand-none";
                 typesTijera = "hand-none";
-                state_1.state.setUserMove("piedra");
+                state_1.state.data.userChoice = "piedra";
             });
             papelEl?.addEventListener("click", () => {
                 typesPiedra = "hand-none";
                 typesPapel = "hand-grande";
                 typesTijera = "hand-none";
-                state_1.state.setUserMove("papel");
+                state_1.state.data.userChoice = "papel";
             });
             tijeraEl?.addEventListener("click", () => {
                 typesPiedra = "hand-none";
                 typesPapel = "hand-none";
                 typesTijera = "hand-grande";
-                state_1.state.setUserMove("tijera");
+                state_1.state.data.userChoice = "tijera";
             });
             if (counter === 0) {
                 // Detener el intervalo
                 clearInterval(interval);
-                state_1.state.runPlayComputer();
-                router_1.Router.go("/selectend");
+                state_1.state.updateRoom(state_1.state.data.roomIdRtadb, state_1.state.data.userID).then(() => {
+                    router_1.Router.go("/selectend");
+                });
             }
         }, 1000);
     }
 }
-exports.Select = Select;
-customElements.define("select-page", Select);
+exports.Selectonline = Selectonline;
+customElements.define("selectonline-page", Selectonline);

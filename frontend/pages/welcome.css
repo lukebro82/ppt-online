@@ -12,11 +12,38 @@
 }
 
 .welcome-title {
-  font-size: 80px;
+  font-size: 70px;
   font-weight: 700;
   line-height: 70px;
   letter-spacing: 0em;
   text-align: left;
   color: #009048;
-  margin: 15px 0px;
+  margin: 15px 0px 0px 0px;
+}
+
+.nuevojuego-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nuevojuego-label {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 49.86px;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.nuevojuego-input {
+  width: 330px;
+  height: 80px;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 10px;
+  border-color: #001997;
+  font-size: 45px;
+  font-family: "Work Sans", sans-serif;
+  text-align: center;
 }

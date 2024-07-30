@@ -1,13 +1,13 @@
 import { state } from "../state";
 import { Router } from "@vaadin/router";
 
-export class Select extends HTMLElement {
+export class Selectonline extends HTMLElement {
   connectedCallback() {
     this.render();
   }
 
   render() {
-    state.setUserMove("papel");
+    state.data.userChoice = "papel";
 
     let counter = 6;
     let typesPiedra = "hand-img ";
@@ -39,7 +39,7 @@ export class Select extends HTMLElement {
         typesPapel = "hand-none";
         typesTijera = "hand-none";
 
-        state.setUserMove("piedra");
+        state.data.userChoice = "piedra";
       });
 
       papelEl?.addEventListener("click", () => {
@@ -47,7 +47,7 @@ export class Select extends HTMLElement {
         typesPapel = "hand-grande";
         typesTijera = "hand-none";
 
-        state.setUserMove("papel");
+        state.data.userChoice = "papel";
       });
 
       tijeraEl?.addEventListener("click", () => {
@@ -55,17 +55,18 @@ export class Select extends HTMLElement {
         typesPapel = "hand-none";
         typesTijera = "hand-grande";
 
-        state.setUserMove("tijera");
+        state.data.userChoice = "tijera";
       });
 
       if (counter === 0) {
         // Detener el intervalo
         clearInterval(interval);
-        state.runPlayComputer();
-        Router.go("/selectend");
+        state.updateRoom(state.data.roomIdRtadb, state.data.userID).then(() => {
+          Router.go("/selectendonline");
+        });
       }
     }, 1000);
   }
 }
 
-customElements.define("select-page", Select);
+customElements.define("selectonline-page", Selectonline);

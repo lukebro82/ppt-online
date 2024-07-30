@@ -3,6 +3,8 @@
     "module": "CommonJS",
     "target": "ESNext",
     "moduleResolution": "Node",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true
   }
 }
