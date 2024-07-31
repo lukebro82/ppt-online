@@ -1,4 +1,4 @@
-import { API_BASE_URL } from ".";
+import { API_BASE_URL } from "./index.ts";
 import { values } from "lodash";
 import { rtdb } from "./rtdb";
 
