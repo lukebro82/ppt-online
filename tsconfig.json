@@ -3,8 +3,10 @@
     "module": "CommonJS",
     "target": "ESNext",
     "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "allowImportingTsExtensions": true
-  }
+    "resolveJsonModule": true
+    // "noEmit": true,
+    // "allowImportingTsExtensions": true
+  },
+  "files": ["./backend/index.ts"],
+  "include": ["frontend/*/", "backend/*/"]
 }

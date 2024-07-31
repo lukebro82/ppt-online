@@ -53,7 +53,7 @@ const state = {
 
   async getRoomId(userId, roomId) {
     return fetch(API_BASE_URL + "/rooms/" + roomId + "?userId=" + userId, {
-      method: "get",
+      method: "GET",
       headers: { "content-type": "application/json" },
     }).then((res) => {
       return res.json();
