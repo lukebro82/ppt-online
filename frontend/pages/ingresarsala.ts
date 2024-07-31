@@ -19,7 +19,7 @@ export class Ingresarsala extends HTMLElement {
             state.data.userName
           )
           .then((res) => {
-            if (res == "room lleno") {
+            if (res.message == "room lleno") {
               Swal.fire({
                 icon: "error",
                 title: "El Room esta lleno!",

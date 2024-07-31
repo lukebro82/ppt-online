@@ -126,7 +126,7 @@ app.post("/room/join", (req, res) => {
     let elArray = data.val();
 
     if (values(elArray).length == 2) {
-      res.json("room lleno");
+      res.json({ message: "room lleno" });
     } else {
       RoomsRef.update({
         [userId]: {
@@ -137,7 +137,7 @@ app.post("/room/join", (req, res) => {
           score: 0,
         },
       });
-      res.json("join");
+      res.json({ message: "join" });
     }
   });
 });
